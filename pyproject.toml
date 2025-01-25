@@ -2,7 +2,8 @@
 name = "mammosunits"
 version = "0.1.0"
 description = "A short description of your project"
-authors = [{ name = "Sam Holt", email = "samjrholt@gmail.com" }]
+authors = [{ name = "Sam Holt", email = "samjrholt@gmail.com" },
+           { name = "Hans Fangohr", email = "hans.fangohr@mpsd.mpg.de"} ]
 requires-python = ">=3.9"
 dependencies = [
     "pytest",
@@ -13,3 +14,16 @@ dependencies = [
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.pixi.project]
+channels = ["conda-forge"]
+platforms = ["osx-arm64"]
+
+[tool.pixi.pypi-dependencies]
+mammosunits = { path = ".", editable = true }
+
+[tool.pixi.tasks]
+example = "jupyter-lab docs/example.ipynb"
+
+[tool.pixi.dependencies]
+python = ">=3.12"
