@@ -1,0 +1,15 @@
+[project]
+name = "mammosunits"
+version = "0.1.0"
+description = "A short description of your project"
+authors = [{ name = "Sam Holt", email = "samjrholt@gmail.com" }]
+requires-python = ">=3.9"
+dependencies = [
+    "pytest",
+    "astropy>=7.0.0",
+    "jupyter",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
