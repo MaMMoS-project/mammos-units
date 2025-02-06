@@ -20,7 +20,7 @@ cd units
 
 ### Install dependencies
 
-#### Option 1: with pixi (easier)
+#### Option 1: with pixi (recommended)
 
 - install [pixi](https://pixi.sh)
 
