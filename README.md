@@ -11,6 +11,11 @@ To get started clone the `mammosunits` repository via `ssh`:
 ```bash
 git clone git@github.com:MaMMoS-project/units.git
 ```
+or `https` if you don't have an `ssh` key:
+
+```bash
+git clone https://github.com/MaMMoS-project/units.git
+```
 
 The enter into the repository:
 
