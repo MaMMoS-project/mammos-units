@@ -37,8 +37,6 @@ conda create -n mammosunits python=3.12 pip
 conda activate mammosunits
 ```
 
-#### 3. Install the local version of the `units` package
-
 Install a local editable version of the code
 
 ```bash
