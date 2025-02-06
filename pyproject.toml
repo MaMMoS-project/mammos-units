@@ -1,7 +1,7 @@
 [project]
 name = "mammosunits"
 version = "0.1.0"
-description = "A short description of your project"
+description = "Magnetic units package built on top of Astropy units"
 authors = [{ name = "Sam Holt", email = "samjrholt@gmail.com" },
            { name = "Hans Fangohr", email = "hans.fangohr@mpsd.mpg.de"} ]
 requires-python = ">=3.11"
