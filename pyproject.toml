@@ -22,9 +22,10 @@ mammosunits = { path = ".", editable = true }
 
 [tool.pixi.tasks]
 example = "jupyter-lab docs/example.ipynb"
-test = "pytest -v"
+test = "pytest -v --nbval"
 
 [tool.pixi.dependencies]
 python = ">=3.11"
 pytest = "*"
 jupyter = "*"
+nbval = "*"
