@@ -9,6 +9,7 @@ on:
       - main
     tags:
       - '*'
+      - '!latest'
   pull_request:
 
 jobs:
@@ -94,3 +95,6 @@ jobs:
         gh release upload
         "$GITHUB_REF_NAME" dist/**
         --repo "$GITHUB_REPOSITORY"
+
+    - name: Update latest-tag
+      uses: EndBug/latest-tag@latest
