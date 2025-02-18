@@ -1,12 +1,10 @@
 name: Add latest tag
 on:
   workflow_dispatch:
-  release:
-    types: [published]
 
 jobs:
   run:
-    name: Run local action
+    name: Update latest tag
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

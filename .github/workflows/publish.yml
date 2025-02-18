@@ -95,3 +95,15 @@ jobs:
           gh release upload
           "$GITHUB_REF_NAME" dist/**
           --repo "$GITHUB_REPOSITORY"
+  latest-tag:
+    needs:
+      - github-release
+    name: Call latest tag workflow
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: workflow dispatch latest
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: latest-tag.yml
