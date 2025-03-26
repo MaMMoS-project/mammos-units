@@ -1,4 +1,4 @@
-import mammosunits as mu
+import mammos_units as mu
 
 def test_new_units():
     # Formula Unit
