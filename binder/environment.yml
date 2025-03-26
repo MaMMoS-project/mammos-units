@@ -6,4 +6,4 @@ dependencies:
   - jupyterlab
   - pip
   - pip:
-      - mammosunits
+      - mammos-units
