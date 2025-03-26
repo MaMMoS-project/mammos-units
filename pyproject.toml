@@ -1,6 +1,6 @@
 [project]
 name = "mammos-units"
-version = "0.2.0"
+version = "0.2.1"
 description = "Magnetic units package built on top of Astropy units"
 authors = [{ name = "Sam Holt", email = "samjrholt@gmail.com" },
            { name = "Hans Fangohr", email = "hans.fangohr@mpsd.mpg.de"} ]

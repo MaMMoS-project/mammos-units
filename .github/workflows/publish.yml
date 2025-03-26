@@ -105,6 +105,8 @@ jobs:
     needs:
       - publish-to-pypi
     name: Update latest tag
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
