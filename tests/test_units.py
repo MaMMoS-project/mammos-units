@@ -93,8 +93,8 @@ def test_array_conversion():
     b_fields = moments.to(u.T, equivalencies=eq)
 
     assert len(b_fields) == 3
-    assert b_fields[1] == 2.0 * b_fields[0]
-    assert b_fields[2] == 3.0 * b_fields[0]
+    assert np.isclose(b_fields[1], 2*b_fields[0])
+    assert np.isclose(b_fields[2], 3*b_fields[0])
 
 
 @pytest.mark.parametrize(
