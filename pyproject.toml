@@ -22,7 +22,7 @@ mammos-units = { path = ".", editable = true }
 
 [tool.pixi.tasks]
 example = "jupyter-lab docs/example.ipynb"
-test = "pytest -v --nbval"
+test = "pytest -v --nbval --doctest-modules"
 
 [tool.pixi.dependencies]
 python = ">=3.11"
