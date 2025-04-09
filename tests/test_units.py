@@ -156,3 +156,77 @@ def test_moment_induction_error_wrong_unit_conversion():
     magnetisation.to(u.T, equivalencies=u.magnetic_flux_field()).to(
         u.mu_B / u.atom, equivalencies=eq
     )
+
+
+def test_emu_unit():
+    """Test that the emu unit is properly defined"""
+    assert hasattr(u, "emu")
+    assert u.emu._format["latex"] == r"\mathrm{emu}"
+
+
+def test_emu_equivalency_creation():
+    """Test creating emu equivalency object"""
+    eq = u.emu_equivalency()
+    assert eq is not None
+    assert eq.name == ["emu_equivalency"]
+
+
+def test_emu_to_physical_units():
+    """Test conversion between emu and its physical interpretations"""
+    eq = u.emu_equivalency()
+
+    # Test conversion: emu → erg/G (magnetic moment)
+    emu_value = 2.5 * u.emu
+    magnetic_moment = emu_value.to(u.erg / u.G, equivalencies=eq)
+    assert magnetic_moment.value == 2.5
+    assert magnetic_moment.unit == u.erg / u.G
+
+    # Test conversion: emu → cm³ (volume)
+    volume = emu_value.to(u.cm**3, equivalencies=eq)
+    assert volume.value == 2.5
+    assert volume.unit == u.cm**3
+
+    # Test reverse conversion: erg/G → emu
+    moment = 3.0 * u.erg / u.G
+    emu_from_moment = moment.to(u.emu, equivalencies=eq)
+    assert emu_from_moment.value == 3.0
+    assert emu_from_moment.unit == u.emu
+
+    # Test reverse conversion: cm³ → emu
+    vol = 4.0 * u.cm**3
+    emu_from_vol = vol.to(u.emu, equivalencies=eq)
+    assert emu_from_vol.value == 4.0
+    assert emu_from_vol.unit == u.emu
+
+
+def test_emu_array_conversion():
+    """Test conversion of arrays of emu values"""
+    eq = u.emu_equivalency()
+
+    # Array of emu values
+    emu_values = np.array([1.0, 2.0, 3.0]) * u.emu
+    
+    # Convert to magnetic moment units
+    moments = emu_values.to(u.erg / u.G, equivalencies=eq)
+    assert len(moments) == 3
+    assert np.isclose(moments[1], 2*moments[0])
+    assert np.isclose(moments[2], 3*moments[0])
+    
+    # Convert to volume units
+    volumes = emu_values.to(u.cm**3, equivalencies=eq)
+    assert len(volumes) == 3
+    assert np.isclose(volumes[1], 2*volumes[0])
+    assert np.isclose(volumes[2], 3*volumes[0])
+
+
+def test_emu_equivalency_error_wrong_unit_conversion():
+    """Test error when trying to convert incompatible units with the emu equivalency"""
+    eq = u.emu_equivalency()
+
+    length = 10 * u.m
+    with pytest.raises(u.UnitConversionError):
+        length.to(u.emu, equivalencies=eq)
+
+    emu_value = 0.5 * u.emu
+    with pytest.raises(u.UnitConversionError):
+        emu_value.to(u.m, equivalencies=eq)

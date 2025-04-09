@@ -4,6 +4,7 @@ import astropy.constants as constants
 def_unit(['f_u', 'formula_unit'], format={'latex': r'\mathrm{f.u.}'}, namespace=globals())
 def_unit('mu_B', constants.muB, format={'latex': r'\mu_B'}, namespace=globals())
 def_unit('atom', format={'latex': r'\mathrm{atom}'}, namespace=globals())
+def_unit('emu', format={'latex': r'\mathrm{emu}'}, namespace=globals())
 
 def moment_induction(volume):
     """
@@ -70,4 +71,40 @@ Must be a positive value.
         [(mu_B/f_u, T, lambda x: x * constants.muB * constants.mu0 / volume, lambda x: x * volume / (constants.mu0 * constants.muB)),
          (mu_B/atom, T, lambda x: x * constants.muB * constants.mu0 / volume, lambda x: x * volume / (constants.mu0 * constants.muB))],
         "moment_induction",
+    )
+
+def emu_equivalency():
+    """
+    Equivalency for converting between electromagnetic unit (emu) and its 
+    different physical interpretations in magnetism.
+    
+    In magnetism, 'emu' has different physical interpretations:
+    
+    1. As a magnetic moment: 1 emu = 1 erg/G
+    2. As a volume in magnetic susceptibility: 1 emu = 1 cm³
+    
+    This equivalency allows converting the standalone emu unit to these 
+    physical quantities when appropriate.
+    
+    Returns
+    -------
+    equivalency : `~astropy.units.Equivalency`
+        The equivalency object that can be passed to the `equivalencies` 
+        argument of `astropy.units.Quantity.to()`.
+    
+    Examples
+    --------
+    >>> import mammos_units as u
+    >>> eq = u.emu_equivalency()
+    >>> moment = 1 * u.emu
+    >>> moment.to(u.erg/u.G, equivalencies=eq)
+    <Quantity 1. erg / G>
+    >>> moment.to(u.cm**3, equivalencies=eq)
+    <Quantity 1. cm3>
+    """
+    # Define the equivalency between emu and its different interpretations
+    return Equivalency(
+        [(emu, erg/G, lambda x: x, lambda x: x),
+         (emu, cm**3, lambda x: x, lambda x: x)],
+        "emu_equivalency",
     )
