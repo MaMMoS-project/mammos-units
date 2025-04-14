@@ -21,7 +21,7 @@ def moment_induction(volume):
     Where:
     - B is the magnetic induction in Tesla
     - μ_0 is the vacuum permeability
-    - m is the magnetic moment in Bohr magnetons per counting unit unit
+    - m is the magnetic moment in Bohr magnetons per counting unit
     - V is the volume per counting unit
     
     Parameters
