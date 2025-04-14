@@ -152,7 +152,7 @@ def test_moment_induction_error_wrong_unit_conversion():
     with pytest.raises(u.UnitConversionError):
         magnetisation.to(u.mu_B / u.atom, equivalencies=eq)
 
-    #
+    # Chain conversion
     magnetisation.to(u.T, equivalencies=u.magnetic_flux_field()).to(
         u.mu_B / u.atom, equivalencies=eq
     )
