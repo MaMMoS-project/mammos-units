@@ -43,19 +43,19 @@ def test_moment_induction_equivalency(counting_unit):
     moment = 2.5 * u.mu_B / counting_unit
     polarisation = moment.to(u.T, equivalencies=eq)
     expected = 2.5 * u.constants.muB * u.constants.mu0 / vol_m3
-    assert abs(polarisation.value - expected.value) < 1e-12
+    assert np.isclose(polarisation.value, expected.value, atol=1e-12)
 
     # Test reverse conversion: Tesla → mu_B/counting_unit
     polarisation = 1e-3 * u.T
     moment = polarisation.to(u.mu_B / counting_unit, equivalencies=eq)
     expected = 1e-3 * vol_m3 / (u.constants.mu0 * u.constants.muB)
-    assert abs(moment.value - expected.value) < 1e-12
+    assert np.isclose(moment.value, expected.value, atol=1e-12)
 
     # Test forward and reverse conversion: mu_B/counting_unit → Tesla → mu_B/counting_unit
     moment = 2.5 * u.mu_B / counting_unit
     polarisation = moment.to(u.T, equivalencies=eq)
     reversed_moment = polarisation.to(u.mu_B / counting_unit, equivalencies=eq)
-    assert abs(reversed_moment.value - moment.value) < 1e-12
+    assert np.isclose(reversed_moment.value, moment.value, atol=1e-12)
 
 
 def test_unit_latex_format():
@@ -152,7 +152,7 @@ def test_moment_induction_error_wrong_unit_conversion():
     with pytest.raises(u.UnitConversionError):
         magnetisation.to(u.mu_B / u.atom, equivalencies=eq)
 
-    #
+    # Chain conversion
     magnetisation.to(u.T, equivalencies=u.magnetic_flux_field()).to(
         u.mu_B / u.atom, equivalencies=eq
     )
