@@ -18,25 +18,32 @@ before your session ends.
 [A notebook with example usage is available](docs/example.ipynb), and can also 
 [be explored interactively](https://mybinder.org/v2/gh/MaMMoS-project/units/latest?urlpath=%2Fdoc%2Ftree%2Fdocs%2Fexample.ipynb).
 
-## Clone and Install
+## Installation
 
+To install `mammos-units`, you can use `pip install mammos-units` inside a Python environment.
+
+-------------------------
+
+The remainder of the documentation is only relevant for development work on the mammos-units package.
+
+## Installation development
 #### 1. Clone the repository
 
-To get started clone the `mammosunits` repository via `ssh`:
+To get started clone the `mammos-units` repository via `ssh`:
 
 ```bash
-git clone git@github.com:MaMMoS-project/units.git
+git clone git@github.com:MaMMoS-project/mammos-units.git
 ```
 or `https` if you don't have an `ssh` key:
 
 ```bash
-git clone https://github.com/MaMMoS-project/units.git
+git clone https://github.com/MaMMoS-project/mammos-units.git
 ```
 
 The enter into the repository:
 
 ```bash
-cd units
+cd mammos-units
 ```
 
 ### Install dependencies
@@ -45,11 +52,11 @@ cd units
 
 - install [pixi](https://pixi.sh)
 
-- run `pixi shell` to create and activate an environment in which `units` is installed (this will install python as well)
+- run `pixi shell` to create and activate an environment in which `mammos-units` is installed (this will install python as well)
 
 - Alternatively, to fire up the `example.ipynb` notebook, use `pixi run example`.
 
-#### Option 2: Create and activate `conda` environment
+#### Option 2: Create and activate `conda` environment, and install `mammos-units` via pip
 
 If required install `conda`. Suggestion: use [miniforge](https://github.com/conda-forge/miniforge).
 
