@@ -16,7 +16,7 @@ before your session ends.
 ## Documentation
 
 [A notebook with example usage is available](docs/example.ipynb), and can also 
-be explored interactively](https://mybinder.org/v2/gh/MaMMoS-project/units/latest?urlpath=%2Fdoc%2Ftree%2Fdocs%2Fexample.ipynb).
+[be explored interactively](https://mybinder.org/v2/gh/MaMMoS-project/units/latest?urlpath=%2Fdoc%2Ftree%2Fdocs%2Fexample.ipynb).
 
 ## Clone and Install
 
