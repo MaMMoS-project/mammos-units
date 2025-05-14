@@ -18,8 +18,11 @@ before your session ends.
 [A notebook with example usage is available](docs/example.ipynb), and can also 
 [be explored interactively](https://mybinder.org/v2/gh/MaMMoS-project/units/latest?urlpath=%2Fdoc%2Ftree%2Fdocs%2Fexample.ipynb).
 
-## Clone and Install
+## Installation
 
+To install `mammos-units`, you can use `pip install mammos-units` inside a Python environment.
+
+-------------------------
 #### 1. Clone the repository
 
 To get started clone the `mammosunits` repository via `ssh`:
