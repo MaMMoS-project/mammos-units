@@ -23,6 +23,10 @@ before your session ends.
 To install `mammos-units`, you can use `pip install mammos-units` inside a Python environment.
 
 -------------------------
+
+The remainder of the documentation is only relevant for development work on the mammos-units package.
+
+## Installation development
 #### 1. Clone the repository
 
 To get started clone the `mammos-units` repository via `ssh`:
