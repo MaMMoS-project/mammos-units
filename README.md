@@ -13,7 +13,13 @@ created or modified during your session will not be saved.
 To avoid losing your work, please remember to download any files you create or edit
 before your session ends.
 
-## Clone and Install 
+## Documentation
+
+[A notebook with example usage is available](docs/example.ipynb), and can also 
+[be explored interactively](https://mybinder.org/v2/gh/MaMMoS-project/units/latest?urlpath=%2Fdoc%2Ftree%2Fdocs%2Fexample.ipynb).
+
+## Clone and Install
+
 #### 1. Clone the repository
 
 To get started clone the `mammosunits` repository via `ssh`:
