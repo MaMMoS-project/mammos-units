@@ -93,8 +93,8 @@ def test_array_conversion():
     b_fields = moments.to(u.T, equivalencies=eq)
 
     assert len(b_fields) == 3
-    assert np.isclose(b_fields[1], 2*b_fields[0])
-    assert np.isclose(b_fields[2], 3*b_fields[0])
+    assert np.isclose(b_fields[1], 2 * b_fields[0])
+    assert np.isclose(b_fields[2], 3 * b_fields[0])
 
 
 @pytest.mark.parametrize(
@@ -123,7 +123,6 @@ def test_moment_induction_error_invalid_argument(invalid_argument):
 
 
 def test_moment_induction_error_nonpositive_volume():
-
     neg_vol = -100 * u.angstrom**3
 
     with pytest.raises(ValueError, match="Volume must be positive"):
@@ -132,7 +131,7 @@ def test_moment_induction_error_nonpositive_volume():
     zero_vol = 0 * u.angstrom**3
 
     with pytest.raises(ValueError, match="Volume must be positive"):
-        eq = u.moment_induction(zero_vol)
+        u.moment_induction(zero_vol)
 
 
 def test_moment_induction_error_wrong_unit_conversion():

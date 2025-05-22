@@ -29,3 +29,6 @@ python = ">=3.11"
 pytest = "*"
 jupyter = "*"
 nbval = "*"
+
+[tool.ruff.lint.per-file-ignores]
+"src/mammos_units/__init__.py" = ["F403", "F405"]

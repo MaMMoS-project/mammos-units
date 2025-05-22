@@ -1,12 +1,21 @@
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
+
 from astropy.units import *
 import astropy.constants as constants
 
-def_unit(['f_u', 'formula_unit'], format={'latex': r'\mathrm{f.u.}'}, namespace=globals())
-def_unit('mu_B', constants.muB, format={'latex': r'\mu_B'}, namespace=globals())
-def_unit('atom', format={'latex': r'\mathrm{atom}'}, namespace=globals())
+if TYPE_CHECKING:
+    import astropy.units
+
+def_unit(
+    ["f_u", "formula_unit"], format={"latex": r"\mathrm{f.u.}"}, namespace=globals()
+)
+def_unit("mu_B", constants.muB, format={"latex": r"\mu_B"}, namespace=globals())
+def_unit("atom", format={"latex": r"\mathrm{atom}"}, namespace=globals())
 
 
-def moment_induction(volume: Quantity) -> Equivalency:
+def moment_induction(volume: astropy.units.Quantity) -> astropy.units.Equivalency:
     """Equivalency for magnetic moment per formula unit and magnetic induction.
 
     Equivalency for converting between magnetic moment per counting unit
@@ -62,7 +71,19 @@ def moment_induction(volume: Quantity) -> Equivalency:
         raise ValueError("Volume must be positive")
 
     return Equivalency(
-        [(mu_B/f_u, T, lambda x: x * constants.muB * constants.mu0 / volume, lambda x: x * volume / (constants.mu0 * constants.muB)),
-         (mu_B/atom, T, lambda x: x * constants.muB * constants.mu0 / volume, lambda x: x * volume / (constants.mu0 * constants.muB))],
+        [
+            (
+                mu_B / f_u,
+                T,
+                lambda x: x * constants.muB * constants.mu0 / volume,
+                lambda x: x * volume / (constants.mu0 * constants.muB),
+            ),
+            (
+                mu_B / atom,
+                T,
+                lambda x: x * constants.muB * constants.mu0 / volume,
+                lambda x: x * volume / (constants.mu0 * constants.muB),
+            ),
+        ],
         "moment_induction",
     )
