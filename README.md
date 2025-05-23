@@ -9,7 +9,7 @@ It provides additional functionality for magnetic units.
 | Linting       | [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/mammos-project/mammos-mumag/main.svg)](https://results.pre-commit.ci/latest/github/mammos-project/mammos-units/main) |
 | Releases      | [![PyPI version](https://badge.fury.io/py/mammos-units.svg)](https://badge.fury.io/py/mammos-units)                                                                                      |
 | Documentation | [![Documentation](https://img.shields.io/badge/Docs-mammos--project.github.io%2Fmammos-blue)](https://mammos-project.github.io/mammos/index.html)                                        |
-| Binder        | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mammos-project/mammos-spindynamics/main?urlpath=lab%2Ftree%2Fexamples)                                       |
+| Binder        | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mammos-project/mammos-spindynamics/latest?urlpath=lab%2Ftree%2Fexamples)                                       |
 | License       | [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)                                                                                     |
 | DOI           | TODO                                                                                                                                                                                     |
 
@@ -17,7 +17,8 @@ It provides additional functionality for magnetic units.
 ## Try it in the cloud
 Try `mammos-units` without installing it locally by directly accessing it directly in the cloud
 via Binder.
-Simply click the badge to get started: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MaMMoS-project/units/latest?urlpath=%2Fdoc%2Ftree%2Fdocs%2Fexample.ipynb)
+
+Simply click the badge in the table above to get started.
 
 Sessions are temporary and may time out after a period of inactivity, and any files
 created or modified during your session will not be saved.
