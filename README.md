@@ -6,7 +6,7 @@ It provides additional functionality for magnetic units.
 | Description   | Badge                                                                                                                                                                                    |
 |---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Tests         | [![Test package](https://github.com/MaMMoS-project/mammos-units/actions/workflows/test.yml/badge.svg)](https://github.com/MaMMoS-project/mammos-units/actions/workflows/test.yml)        |
-| Linting       | [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/mammos-project/mammos-mumag/main.svg)](https://results.pre-commit.ci/latest/github/mammos-project/mammos-units/main) |
+| Linting       | [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/MaMMoS-project/mammos-units/main.svg)](https://results.pre-commit.ci/latest/github/MaMMoS-project/mammos-units/main)
 | Releases      | [![PyPI version](https://badge.fury.io/py/mammos-units.svg)](https://badge.fury.io/py/mammos-units)                                                                                      |
 | Documentation | [![Documentation](https://img.shields.io/badge/Docs-mammos--project.github.io%2Fmammos-blue)](https://mammos-project.github.io/mammos/index.html)                                        |
 | Binder        | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mammos-project/mammos-units/latest?urlpath=lab%2Ftree%2Fexamples)                                       |
