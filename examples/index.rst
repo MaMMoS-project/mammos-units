@@ -1,5 +1,5 @@
-MaMMoS units examples
-=====================
+mammos-units
+============
 
 .. toctree::
    :maxdepth: 1
