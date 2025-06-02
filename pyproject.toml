@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mammos-units"
-version = "0.2.3"
+version = "0.2.4.dev0"
 description = "Magnetic units package built on top of Astropy units"
 authors = [
     { name = "Sam Holt", email = "samjrholt@gmail.com" },
