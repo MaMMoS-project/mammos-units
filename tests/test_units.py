@@ -1,7 +1,8 @@
-import mammos_units as u
-import pytest
 import numpy as np
+import pytest
 from astropy.units import isclose
+
+import mammos_units as u
 
 
 def test_new_units():
@@ -51,7 +52,8 @@ def test_moment_induction_equivalency(counting_unit):
     expected = 1e-3 * vol_m3 / (u.constants.mu0 * u.constants.muB)
     assert np.isclose(moment.value, expected.value, atol=1e-12)
 
-    # Test forward and reverse conversion: mu_B/counting_unit → Tesla → mu_B/counting_unit
+    # Test forward and reverse conversion:
+    # mu_B/counting_unit → Tesla → mu_B/counting_unit
     moment = 2.5 * u.mu_B / counting_unit
     polarisation = moment.to(u.T, equivalencies=eq)
     reversed_moment = polarisation.to(u.mu_B / counting_unit, equivalencies=eq)
