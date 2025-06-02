@@ -6,13 +6,16 @@ https://docs.astropy.org/en/stable/units/ref_api.html.
 
 from __future__ import annotations
 
+import importlib.metadata
 from typing import TYPE_CHECKING
 
-from astropy.units import *
 import astropy.constants as constants
+from astropy.units import *
 
 if TYPE_CHECKING:
     import astropy.units
+
+__version__ = importlib.metadata.version(__package__)
 
 def_unit(
     ["f_u", "formula_unit"], format={"latex": r"\mathrm{f.u.}"}, namespace=globals()
