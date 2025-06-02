@@ -1,6 +1,6 @@
 # mammos-units
 
-`mammos-units` is a units package built on top of the powerful Astropy units.
+`mammos-units` is a units package built on top of Astropy units.
 It provides additional functionality for magnetic units.
 
 | Description   | Badge                                                                                                                                                                                    |
