@@ -41,50 +41,38 @@ exclude = [
 [tool.ruff.lint]
 select = [
   "B",   # flake8-bugbear
-  # "D",   # pydocstyle
+  "D",   # pydocstyle
   "E",   # pycodestyle
   "F",   # Pyflakes
   "I",   # isort
   "SIM", # flake8-simplify
   "UP",  # pyupgrade
 ]
-#ignore = [
-#  # conflict with other rules
-#  "D203", # one-blank-line-before-class (conflicts with D204)
-#  # conflict with formatter
-#  "D206", # indent-with-spaces
-#  "D212", # multi-line-summary-first-line (conflicts with D213)
-#  "D300", # triple-single-quotes
-#  "E111", # indentation-with-invalid-multiple
-#  "E114", # indentation-with-invalid-multiple-comment
-#  "E117", # over-indented
-#]
 isort.known-local-folder = [ "src/mammos_units" ]
 pydocstyle.convention = "pep257"
+
 [tool.ruff.lint.per-file-ignores]
 "src/mammos_units/__init__.py" = ["F403", "F405"]  # * import of astropy.units
-"*.ipynb" = [
-  "B018", # "Found useless expression. Either assign it to a variable or remove it."; false positives when using implicit __repr__ in the notebook
-]
+"*.ipynb" = ["B018"]  # "Found useless expression. Either assign it to a variable or remove it."; false positives when using implicit __repr__ in the notebook
+"tests/*" = ["D100", "D103"]  # do not enforce docstrings in tests
 
 [tool.pixi.workspace]
 channels = [ "conda-forge" ]
 platforms = [ "osx-arm64", "linux-64", "osx-64", "win-64" ]
 
-# Due to the inability to resolve conda and PyPI dependencies together
-# we install as much as possible from PyPI
 [tool.pixi.dependencies]
 python = "==3.11"
-# esys-escript = ">=5.10,6"
+hatch = "*"
+ipython = "*"
+jupyterlab = ">3"
+nbval = "*"
+packaging = "<25"
+pre-commit = "*"
+pytest = "*"
+ruff = "*"
 
 [tool.pixi.pypi-dependencies]
 mammos-units = { path = ".", editable = true }
-jupyterlab = ">3"
-pre-commit = "*"
-pytest = "*"
-nbval = "*"
-ipython = "*"
-hatch = "*"
 
 [tool.pixi.tasks]
 examples = "jupyter-lab examples"

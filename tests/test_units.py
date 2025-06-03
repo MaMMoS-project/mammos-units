@@ -19,7 +19,7 @@ def test_new_units():
 
 
 def test_equivalency_creation():
-    """Test creating equivalency objects with different volumes"""
+    """Test creating equivalency objects with different volumes."""
     vol1 = 100 * u.angstrom**3
 
     eq1 = u.moment_induction(vol1)
@@ -35,7 +35,7 @@ def test_equivalency_creation():
 
 @pytest.mark.parametrize("counting_unit", [u.f_u, u.atom])
 def test_moment_induction_equivalency(counting_unit):
-    """Test conversion between mu_B/f_u and Tesla"""
+    """Test conversion between mu_B/f_u and Tesla."""
     vol = 100 * u.angstrom**3
     vol_m3 = vol.to(u.m**3)
     eq = u.moment_induction(vol)
@@ -61,14 +61,14 @@ def test_moment_induction_equivalency(counting_unit):
 
 
 def test_unit_latex_format():
-    """Test that units have the correct LaTeX formatting"""
+    """Test that units have the correct LaTeX formatting."""
     assert u.f_u._format["latex"] == r"\mathrm{f.u.}"
     assert u.mu_B._format["latex"] == r"\mu_B"
     assert u.atom._format["latex"] == r"\mathrm{atom}"
 
 
 def test_moment_induction_different_volume_units():
-    """Test moment_induction with different volume units"""
+    """Test moment_induction with different volume units."""
     # Using cubic nanometers
     vol_nm = 1.0 * u.nm**3
     eq_nm = u.moment_induction(vol_nm)
@@ -86,7 +86,7 @@ def test_moment_induction_different_volume_units():
 
 
 def test_array_conversion():
-    """Test conversion of arrays of values"""
+    """Test conversion of arrays of values."""
     vol = 100 * u.angstrom**3
     eq = u.moment_induction(vol)
 
@@ -137,7 +137,7 @@ def test_moment_induction_error_nonpositive_volume():
 
 
 def test_moment_induction_error_wrong_unit_conversion():
-    """Test error when trying to convert incompatible units with the equivalency"""
+    """Test error when trying to convert incompatible units with the equivalency."""
     vol = 100 * u.angstrom**3
     eq = u.moment_induction(vol)
 
