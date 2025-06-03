@@ -84,6 +84,7 @@ pre-commit = "*"
 pytest = "*"
 nbval = "*"
 ipython = "*"
+hatch = "*"
 
 [tool.pixi.tasks]
 examples = "jupyter-lab examples"
