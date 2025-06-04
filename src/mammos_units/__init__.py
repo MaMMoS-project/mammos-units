@@ -2,6 +2,12 @@
 
 mammos_units is an extension of astropy.units. Please refer to
 https://docs.astropy.org/en/stable/units/ref_api.html.
+
+The following additional units are defined in this package:
+
+- formula_unit`
+- `mu_B`
+- `atom`
 """
 
 from __future__ import annotations
