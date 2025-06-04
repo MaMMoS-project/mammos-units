@@ -25,7 +25,7 @@ def_unit("atom", format={"latex": r"\mathrm{atom}"}, namespace=globals())
 
 
 def moment_induction(volume: astropy.units.Quantity) -> astropy.units.Equivalency:
-    """Equivalency for magnetic moment per formula unit and magnetic induction.
+    r"""Equivalency for magnetic moment per formula unit and magnetic induction.
 
     Equivalency for converting between magnetic moment per counting unit
     (either formula unit or per atom) and magnetic induction (Tesla).
@@ -37,7 +37,7 @@ def moment_induction(volume: astropy.units.Quantity) -> astropy.units.Equivalenc
 
     .. math::
 
-        B = \\frac{\\mu_0 \\cdot m}{V}
+        B = \frac{\mu_0 \cdot m}{V}
 
     Where:
     - B is the magnetic induction in Tesla
