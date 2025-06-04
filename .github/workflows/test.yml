@@ -30,9 +30,9 @@ jobs:
       run: pixi run test-notebooks
     - name: Keep pixi.lock artifact for debugging
       uses: actions/upload-artifact@v4
-      if: matrix.os == 'ubuntu-latest'
       with:
         path: pixi.lock
+      if: ${{ matrix.os == 'ubuntu-latest' && !cancelled() }}
 
   build:
     needs: test
