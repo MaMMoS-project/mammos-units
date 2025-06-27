@@ -8,10 +8,11 @@ version = "0.3.1.post0"
 description = "Magnetic units package built on top of Astropy units"
 readme = "README.md"
 authors = [
-    { name = "Sam Holt", email = "samjrholt@gmail.com" },
-    { name = "Hans Fangohr", email = "hans.fangohr@mpsd.mpg.de"},
-    {name = "Swapneel Amit Pathak", email = "swapneel-amit.pathak@mpsd.mpg.de"},
-    {name = "Martin Lang", email = "martin.lang@mpsd.mpg.de"},
+    { name = "Sam Holt" },
+    { name = "Swapneel Amit Pathak" },
+    { name = "Martin Lang" },
+    { name = "Andrea Petrocchi" },
+    { name = "Hans Fangohr" },
 ]
 license = "MIT"
 license-files = ["LICENSE"]
