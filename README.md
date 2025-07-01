@@ -9,9 +9,9 @@ It provides additional functionality for magnetic units.
 | Linting       | [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/MaMMoS-project/mammos-units/main.svg)](https://results.pre-commit.ci/latest/github/MaMMoS-project/mammos-units/main) |
 | Releases      | [![PyPI version](https://badge.fury.io/py/mammos-units.svg)](https://badge.fury.io/py/mammos-units)                                                                                      |
 | Documentation | [![Documentation](https://img.shields.io/badge/Docs-mammos--project.github.io%2Fmammos-blue)](https://mammos-project.github.io/mammos/index.html)                                        |
-| Binder        | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mammos-project/mammos-units/latest?urlpath=lab%2Ftree%2Fexamples)                                       |
+| Binder        | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mammos-project/mammos-units/latest?urlpath=lab%2Ftree%2Fexamples)                                            |
 | License       | [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)                                                                                     |
-| DOI           | TODO                                                                                                                                                                                     |
+| DOI           | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15754464.svg)](https://doi.org/10.5281/zenodo.15754464)                                                                              |
 
 
 ## Try it in the cloud
