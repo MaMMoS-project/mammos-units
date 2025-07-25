@@ -55,16 +55,16 @@ jobs:
           set -euo pipefail
 
           # Extract the first level 2 heading
-          first_h2=$(grep -o -m1 -E "^## \[blaupause .*\]" CHANGELOG.md || true)
+          first_h2=$(grep -o -m1 -E "^## \[mammos-units .*\]" CHANGELOG.md || true)
 
           if [ -z "$first_h2" ]; then
             echo "::error::No level-2 (##) heading found in CHANGELOG.md."
             exit 1
           fi
 
-          echo "First heading in CHANGELOG.md: '$first_h2'"
+          echo "First level-2 heading in CHANGELOG.md starts with: '$first_h2'"
 
-          expected="## [blaupause $GITHUB_REF_NAME]"
+          expected="## [mammos-units $GITHUB_REF_NAME]"
           if [ "$first_h2" != "$expected" ]; then
             echo "::error::First heading must start with '$expected'"
             exit 1
