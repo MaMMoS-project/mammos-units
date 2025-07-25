@@ -44,7 +44,7 @@ Assume we have two PRs:
    Add a file with name `2.misc.md` with content:
 
    ```markdown
-   Refactoring of the CI to increase parallelisation.
+   Refactoring of the CI to increase parallelization.
    ```
 
 This will result in the following additions to the changelog (assuming we
@@ -59,14 +59,14 @@ release this as mammos-units version 0.1.0):
 
 ### Misc
 
-- Refactoring of the CI to increase parallelisation. ([#2](<url to PR 2>))
+- Refactoring of the CI to increase parallelization. ([#2](<url to PR 2>))
 ```
 
 ## Making a release
 
 When releasing bump the package version and subsequently run `towncrier build`
 in the root directory to convert all changelog fragments into a new section in
-the toplevel CHANGELOG file. Commit changes in the changelog file and
+the toplevel CHANGELOG.md file. Commit changes in the changelog file and
 automatically removed fragment files prior to tagging the release.
 
 To preview the changes run `towncrier build --draft`.
