@@ -51,7 +51,7 @@ select = [
   "UP",  # pyupgrade
 ]
 isort.known-local-folder = [ "src/mammos_units" ]
-pydocstyle.convention = "pep257"
+pydocstyle.convention = "google"
 
 [tool.ruff.lint.per-file-ignores]
 "src/mammos_units/__init__.py" = ["F403", "F405"]  # * import of astropy.units
