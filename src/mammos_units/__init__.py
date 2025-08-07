@@ -1,13 +1,30 @@
-"""Quantities (values with units).
+r"""Quantities (values with units).
 
 mammos_units is an extension of astropy.units. Please refer to
 https://docs.astropy.org/en/stable/units/ref_api.html.
 
 The following additional units are defined in this package:
 
-- formula_unit`
-- `mu_B`
-- `atom`
+.. py:data:: formula_unit
+   :type: ~astropy.units.Unit
+
+   Dimensionless counting unit representing one stoichiometric
+   formula unit of a material.
+
+.. py:data:: mu_B
+   :type: ~astropy.units.Unit
+
+   Bohr magneton (:math:`\mu_B`) as a unit, rather than a constant.
+
+   .. seealso::
+
+      :py:obj:`astropy.constants.muB <astropy.constants>` - The Bohr magneton
+      as a physical‑constant Quantity.
+
+.. py:data:: atom
+   :type: ~astropy.units.Unit
+
+   Dimensionless counting unit representing an atom.
 """
 
 from __future__ import annotations
