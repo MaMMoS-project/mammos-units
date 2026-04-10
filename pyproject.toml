@@ -81,7 +81,7 @@ mammos-units = { path = ".", editable = true }
 examples = "jupyter-lab examples"
 test-unittest = "pytest -v tests"
 test-docstrings = "pytest -v --doctest-modules src/mammos_units"
-test-notebooks = "pytest -v --nbval-lax examples"
+test-notebooks = "pytest -v --nbval --nbval-sanitize-with=tests/nbval_sanitize.cfg examples"
 test-all = { depends-on = ["test-unittest", "test-docstrings", "test-notebooks"] }
 style = "pre-commit run --all-files"
 
