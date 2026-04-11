@@ -5,6 +5,34 @@ from astropy.units import isclose
 import mammos_units as u
 
 
+def test_public_api_surface():
+    """Pin down the public names relied on by users and notebooks."""
+    expected_names = [
+        "A",
+        "Equivalency",
+        "G",
+        "Gauss",
+        "Oe",
+        "Quantity",
+        "T",
+        "UnitConversionError",
+        "atom",
+        "constants",
+        "f_u",
+        "formula_unit",
+        "kA",
+        "m",
+        "magnetic_flux_field",
+        "moment_induction",
+        "mu_B",
+        "nm",
+        "set_enabled_equivalencies",
+    ]
+
+    for name in expected_names:
+        assert hasattr(u, name), f"mammos_units is missing public name {name!r}"
+
+
 def test_new_units():
     # Formula Unit
     assert hasattr(u, "f_u")
@@ -67,6 +95,12 @@ def test_unit_latex_format():
     assert u.atom._format["latex"] == r"\mathrm{atom}"
 
 
+def test_magnetic_constants_values():
+    """Pin down the SI values used by the unit conversions."""
+    assert np.isclose(u.constants.muB.si.value, 9.2740100783e-24, rtol=1e-12)
+    assert np.isclose(u.constants.mu0.si.value, 1.25663706127e-6, rtol=1e-12)
+
+
 def test_moment_induction_different_volume_units():
     """Test moment_induction with different volume units."""
     # Using cubic nanometers
@@ -97,6 +131,46 @@ def test_array_conversion():
     assert len(b_fields) == 3
     assert np.isclose(b_fields[1], 2 * b_fields[0])
     assert np.isclose(b_fields[2], 3 * b_fields[0])
+
+
+def test_string_based_unit_conversion_from_notebooks():
+    """Notebook examples rely on string-based target units."""
+    field = 1e-3 * u.T
+    magnetisation = 300 * u.kA / u.m
+
+    assert isclose(field.to("gauss"), field.to(u.gauss))
+    assert isclose(magnetisation.to("Oe"), magnetisation.to(u.Oe))
+
+
+def test_enabled_equivalencies_context_manager_matches_explicit_conversion():
+    """Implicitly enabled equivalencies should match explicit conversion."""
+    field = 1e-3 * u.T
+    explicit = field.to("A/m", equivalencies=u.magnetic_flux_field())
+
+    with u.set_enabled_equivalencies(u.magnetic_flux_field()):
+        implicit = field.to("A/m")
+
+    assert isclose(implicit, explicit)
+
+
+def test_enabled_equivalencies_can_be_set_and_reset():
+    """Global equivalencies can be enabled and reset like in the notebooks."""
+    field = 1e-3 * u.T
+
+    with pytest.raises(u.UnitConversionError):
+        field.to("A/m")
+
+    token = u.set_enabled_equivalencies(u.magnetic_flux_field())
+    assert hasattr(token, "__enter__")
+    assert hasattr(token, "__exit__")
+    assert isclose(
+        field.to("A/m"), field.to("A/m", equivalencies=u.magnetic_flux_field())
+    )
+
+    u.set_enabled_equivalencies(None)
+
+    with pytest.raises(u.UnitConversionError):
+        field.to("A/m")
 
 
 @pytest.mark.parametrize(
