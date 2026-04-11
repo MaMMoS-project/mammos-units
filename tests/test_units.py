@@ -1,8 +1,9 @@
 import numpy as np
 import pytest
-from astropy.units import isclose
 
 import mammos_units as u
+
+isclose = u.isclose
 
 
 def test_public_api_surface():
@@ -40,7 +41,7 @@ def test_new_units():
 
     # Bohr Magneton
     assert hasattr(u, "mu_B")
-    assert u.mu_B == u.constants.muB
+    assert np.isclose(u.constants.muB.to(u.mu_B).value, 1.0)
 
     # Atom
     assert hasattr(u, "atom")
