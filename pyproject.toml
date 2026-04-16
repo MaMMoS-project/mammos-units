@@ -25,7 +25,8 @@ classifiers = [
 ]
 requires-python = ">=3.11"
 dependencies = [
-    "astropy>=7.0.0",
+    "numpy>=1.26",
+    "pint>=0.24",
 ]
 
 [project.urls]
@@ -68,7 +69,9 @@ hatch = "*"
 ipython = "*"
 jupyterlab = ">3"
 nbval = "*"
+numpy = "*"
 packaging = "<25"
+pint = "*"
 pre-commit = "*"
 pytest = "*"
 ruff = "*"
@@ -81,7 +84,7 @@ mammos-units = { path = ".", editable = true }
 examples = "jupyter-lab examples"
 test-unittest = "pytest -v tests"
 test-docstrings = "pytest -v --doctest-modules src/mammos_units"
-test-notebooks = "pytest -v --nbval-lax examples"
+test-notebooks = "pytest -v --nbval --nbval-sanitize-with=tests/nbval_sanitize.cfg examples"
 test-all = { depends-on = ["test-unittest", "test-docstrings", "test-notebooks"] }
 style = "pre-commit run --all-files"
 
