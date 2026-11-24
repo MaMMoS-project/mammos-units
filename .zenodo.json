@@ -31,13 +31,6 @@
   "upload_type": "software",
   "license": "mit",
   "language": "eng",
-  "keywords": [
-    "magnetic units",
-    "physical units",
-    "dimensional analysis",
-    "Astropy",
-    "MaMMoS"
-  ],
   "grants": [
     {
       "id": "10.13039/501100000780::101135546"
