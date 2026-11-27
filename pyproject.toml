@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mammos-units"
-version = "0.3.2"
+version = "0.3.3"
 description = "Magnetic units package built on top of Astropy units"
 readme = "README.md"
 authors = [
