@@ -43,7 +43,7 @@ H. Fangohr et al., Toward a Magnetic Multiscale Modeling Suite (MaMMoS),
 doi: [10.1109/TMAG.2026.3689962](https://doi.org/10.1109/TMAG.2026.3689962).
 
 ```bibtex
-@ARTICLE{mammos2026,
+@article{mammos2026,
   author={Fangohr, Hans and Holt, Samuel J. R. and Lang, Martin and Pathak, Swapneel and Petrocchi, Andrea and Adams, Michael and Hortschitz, Wilfried and Pile, Santa and Vishina, Alena and Nur Hasan, M. and Marchant, Georgia A. and Colnaghi, Timoteo and Winkler, Christina and Winkler, Jonas and Rigaut, William and Devillers, Thibaut and Berre, Pierre Le and Rahi, Camille and Dempsey, Nora M. and Woodcock, Thomas G. and Marek, Andreas and Herper, Heike C. and Schrefl, Thomas},
   journal={IEEE Transactions on Magnetics},
   title={Toward a Magnetic Multiscale Modeling Suite (MaMMoS)},
@@ -51,7 +51,8 @@ doi: [10.1109/TMAG.2026.3689962](https://doi.org/10.1109/TMAG.2026.3689962).
   volume={62},
   number={10},
   pages={7001606-7001606},
-  doi={10.1109/TMAG.2026.3689962}
+  doi={10.1109/TMAG.2026.3689962},
+  url={https://mammos-project.github.io}
 }
 ```
 
@@ -63,12 +64,12 @@ doi: [10.5281/zenodo.15754463](https://doi.org/10.5281/zenodo.15754463).
 
 ```bibtex
 @software{mammos_units_zenodo,
-  author={Holt, Samuel and Pathak, Swapneel Amit and Lang, Martin and Petrocchi, Andrea and Fangohr, Hans},
+  author={Holt, Samuel and Lang, Martin and Petrocchi, Andrea and Pathak, Swapneel Amit and Adams, Michael and Fangohr, Hans},
   title={mammos-units},
   year={2025},
   publisher={Zenodo},
   doi={10.5281/zenodo.15754463},
-  url={https://doi.org/10.5281/zenodo.15754463}
+  url={https://github.com/MaMMoS-project/mammos-units}
 }
 ```
 
